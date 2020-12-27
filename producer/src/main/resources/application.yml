@@ -1,0 +1,10 @@
+cloud: 
+    aws:
+      credentials:
+        profile-name: docker-ms
+        profile-path: /home/.aws/credentials
+      region:
+        static: af-south-1
+        auto: false
+      stack:
+        auto: false

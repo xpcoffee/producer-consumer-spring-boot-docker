@@ -1,0 +1,11 @@
+version: "3.7"
+services:
+  app:
+    image: producer
+    container_name: producer
+    environment:
+      AWS_EC2_METADATA_DISABLED: true
+    expose:
+    - "8080"
+    volumes:
+    - $HOME/.aws/credentials:/home/app/.aws/credentials:ro
