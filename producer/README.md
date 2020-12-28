@@ -10,6 +10,12 @@ Exposes an API on port 8080 which can be called to produce new messages.
 POST to /produce with the message in the call body
 ```
 
+e.g.
+
+```sh
+curl -X POST -d "hello world" localhost:8080/produce
+```
+
 ## Development
 
 ### Pre-requisites
@@ -61,7 +67,3 @@ If you cannot use Docker, this section will guide you through some local modific
 ```sh
 java -jar ./build/libs/producer-0.0.1.jar
 ```
-
-### Making a call
-
-Use an HTTP client (e.g. [Postman](https://www.postman.com/downloads/)) to make an HTTP POST call against `localhost:8080/produce` with the message you wish to post in the HTTP request body.
