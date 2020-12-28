@@ -14,8 +14,8 @@ public class HttpController {
         this.sqsQueueSender = sqsQueueSender;
     }
 
-	@PostMapping("/produce")
-	public void pushMessage(@RequestBody String message) {
+    @PostMapping("/produce")
+    public void pushMessage(@RequestBody String message) {
         this.sqsQueueSender.send(message);
-	}
+    }
 }
