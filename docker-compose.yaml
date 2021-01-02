@@ -1,11 +1,20 @@
 version: "3.7"
 services:
-  app:
-    image: producer
+  producer:
+    build: ./producer
+    image: xpcoffee/producer
     container_name: producer
     environment:
-      AWS_EC2_METADATA_DISABLED: true
-    expose:
-    - "8080"
+      AWS_EC2_METADATA_DISABLED: "true"
+    ports:
+    - 8080:8080
     volumes:
-    - $HOME/.aws/credentials:/home/app/.aws/credentials:ro
+    - ${HOME}/.aws/credentials:/home/.aws/credentials:ro
+  consumer:
+    build: ./consumer
+    image: xpcoffee/consumer
+    container_name: consumer
+    environment:
+      AWS_EC2_METADATA_DISABLED: "true"
+    volumes:
+    - ${HOME}/.aws/credentials:/home/.aws/credentials:ro

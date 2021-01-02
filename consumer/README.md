@@ -39,7 +39,7 @@ docker build -t xpcoffee/consumer .
 Run:
 
 ```sh
-docker run -p 8081:8081 -e AWS_EC2_METADATA_DISABLED=true -v $HOME/.aws/credentials:/home/.aws/credentials xpcoffee/consumer
+docker run -e AWS_EC2_METADATA_DISABLED=true -v $HOME/.aws/credentials:/home/.aws/credentials xpcoffee/consumer
 ```
 
 You will need to jump onto the container to see the logs under `/app/logs`.
